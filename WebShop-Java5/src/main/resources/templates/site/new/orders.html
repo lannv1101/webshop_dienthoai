@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="UTF-8"  xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{site/new/layout.html}"
+    >
+    <head>
+        <title>Check Orders</title>
+    </head>
+
+    <body   layout:fragment="content">
+     
+    <!-- Start Wishlist  -->
+    <div class="wishlist-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-main table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order Id</th>
+                                    <th>Customer Name</th>
+                                    <th>Order Day</th>
+                                   
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each=" item : ${orders}">
+                                    <td>[[${item.orderId}]]</td>
+                                    <td>[[${item.customer.name}]]</td>
+                                    <td>[[${item.orderDate}]]</td>
+                                    <td>[[${item.amount}]]</td>
+
+                                    <td th:text="${item.status}==1?'Đang Ship':'Hoàn Thành' "></td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Wishlist -->
+    </body>
+</html>

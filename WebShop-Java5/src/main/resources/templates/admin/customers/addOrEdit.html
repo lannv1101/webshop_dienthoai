@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="UTF-8"  xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{admin/Layout.html}"
+    >
+
+    <head>
+        <title>Quản Lý Khách Hàng</title>
+      
+    </head>
+
+    <body>
+        <div class="container" layout:fragment="content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="text-center">Quản lý khách hàng</h2>
+                </div>
+                <div th:if="${message !=null}" class="alert alert-primary text-center" role="alert">
+                    <i>[[${message}]]</i>
+                </div>
+                <div class="panel-body">
+                    <form th:action="@{/admin/customers/saveOrUpdate}" method="POST" th:object="${customer}">
+                        <!-- <div class="form-group mt-3">
+                            <label for="customerId">Mã khách hàng:</label>
+                            
+                        </div> -->
+                        <input  type="hidden" class="form-control" id="customerId" th:field="*{customerId}" >
+                   
+                        <div class="form-group mt-3">
+                            <label for="name">Tên khách hàng:</label>
+                            <input  type="text" class="form-control" id="name" th:field="*{name}">
+                            <small id="name" th:if="${#fields.hasErrors('name')}" class="form-text text-danger">Vui lòng nhập tên khách hàng</small>
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="password">Password:</label>
+                            <input  type="text" class="form-control" id="password" th:field="*{password}">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="email">Email:</label>
+                            <input  type="email" class="form-control" id="email" th:field="*{email}">
+                            <small id="email" th:if="${#fields.hasErrors('email')}" class="form-text text-danger">Vui lòng nhập email khách hàng</small>
+
+                        </div>
+                        
+                        <div class="form-group mt-3">
+                            <label for="phone">Phone:</label>
+                            <input type="text" class="form-control" id="phone" th:field="*{phone}">
+                            <small id="phone" th:if="${#fields.hasErrors('phone')}" class="form-text text-danger">Vui lòng nhập số điện thoại khách hàng</small>
+
+                        </div>
+
+
+                        <div class="form-group mt-3">
+                            <label for="address">Address:</label>
+                            <input type="text" class="form-control" id="address" th:field="*{address}">
+                            <small id="address" th:if="${#fields.hasErrors('address')}" class="form-text text-danger">Vui lòng nhập địa chỉ khách hàng</small>
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="">Tình trạng</label>
+                            <select class="form-control" name="status" id="status"  th:field="*{status}">
+                              <option value="1">Hoạt động</option>
+                              <option value="2">Dừng hoạt động</option>
+                            
+    
+                            
+    
+                            </select>
+    
+                          </div>
+                        <button class="btn btn-success mt-3"><i class="fas fa-save"></i>
+                            <span th:if="${customer.isEdit}">Cập nhật</span>
+                            <span th:unless="${customer.isEdit}">Lưu</span>
+                        </button>
+                        <a th:href="@{/admin/customers/searchpaginated}" class="btn btn-info float-right mt-3"><i class="fas fa-list" ></i> Danh sách khách hàng</a>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+
+     
+    </body>
+
+    </html>

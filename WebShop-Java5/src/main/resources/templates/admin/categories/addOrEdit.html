@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{admin/Layout.html}"
+    >
+<head>
+  
+</head>
+
+<body>
+  
+       
+            <section class="row" layout:fragment="content" >
+                <div class="col-7  offset-3 mt-4">
+                    <div th:if="${message !=null}" class="alert alert-primary" role="alert">
+                        <i>[[${message}]]</i>
+                    </div>
+                    <form th:action="@{/admin/categories/saveOrUpdate}" method="post" th:object="${category}">
+                        <div class="card">
+                            <div class="card-header ">
+                            <h2>Thêm mới danh mục</h2>
+                            </div>
+                            <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryId"> Mã Danh Mục </label>
+                                <input type="hidden" th:field="*{isEdit}">
+                                <input type="text" class="form-control" th:field="*{categoryId}"  aria-describedby="categoryIdhelpId" placeholder="CategoryId" readonly>
+                                <small th:if="${#fields.hasErrors('categoryId')}" id="categoryIdhelpId" class="form-text text-danger">Vui lòng nhập mã danh mục</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Tên Danh Mục</label>
+                                <input type="text" class="form-control" th:field="*{name}" id="name" aria-describedby="namehelpId" placeholder="Name">
+                                <small th:if="${#fields.hasErrors('name')}" id="namehelpId" class="form-text text-danger">Vui lòng nhập tên danh mục</small>
+                            </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="reset" class="btn btn-secondary">Làm mới</button>
+                                <a th:href="@{/admin/categories/searchpaginated}" class="btn btn-success" ><i class="fas fa-list"></i>Danh sách danh mục</a>
+
+                                <button class="btn btn-primary"><i class="fas fa-save"></i>
+                                    
+                                    <span th:if="${category.isEdit}">Cập nhật</span>
+                                    <span th:unless="${category.isEdit}">Lưu</span>
+                                
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+     
+   
+    
+</body> 
+</html>

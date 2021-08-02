@@ -1,0 +1,293 @@
+    <!doctype html>
+    <html lang="en"  xmlns:th="http://www.thymeleaf.org"
+    
+        >
+
+    <head>
+        
+        <title>Quản lý sản phẩm</title>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+         
+
+        
+            <link rel="canonical" th:href="@{https://getbootstrap.com/docs/5.0/examples/dashboard/}">
+        <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.1.1/css/all.css}" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+        
+
+        <!-- Bootstrap core CSS -->
+    <link th:href="@{/Layout/bootstrap.min.css}" rel="stylesheet">
+
+
+        <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+        }
+        </style>
+
+        
+        <!-- Custom styles for this template -->
+        <link th:href="@{/Layout/dashboard.css}" rel="stylesheet">
+            
+            </head>
+
+    <body>
+        <header class="navbar navbar sticky-top flex-md-nowrap p-0 shadow" style="background-color: #f47216;">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Tech Shop Admin</a>
+            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">                
+                
+            
+      
+            <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Đăng xuất</a>
+            </li>
+            </ul>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" th:href="@{/admin/home}">
+                            <span data-feather="home"></span>
+                          Trang Chủ
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" th:href="@{/admin/orders/add}">
+                            <span data-feather="file"></span>
+                            Quản Lý Đặt Hàng
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" th:href="@{/admin/products/add}">
+                            <span data-feather="shopping-cart"></span>
+                            Quản Lý Sản Phẩm
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" th:href="@{/admin/customers/add}">
+                            <span data-feather="users"></span>
+                           Quản Lý Người Dùng
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/admin/categories/add}">
+                              <span data-feather="layers"></span>
+                              Quản Lý Danh Mục
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" th:href="@{/admin/accounts/new}">
+                              <span data-feather="user"></span>
+                              Quản Lý Tài Khoản
+                            </a>
+                          </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">
+                            <span data-feather="bar-chart-2"></span>
+                          Thống Kê
+                          </a>
+                        </li>
+                     
+                     
+                      </ul>
+              
+                    
+                      </ul>
+                    </div>
+                  </nav>
+        
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                <div class="container" >
+
+                   
+                    <div class="card-header ">
+                        <h3 class="text-center">Thêm mới sản phẩm</h3>
+                        <div th:if="${message !=null}" class="alert alert-primary text-center" role="alert">
+                            <i>[[${message}]]</i>
+                        </div>
+                    </div>
+                   
+                    <form th:action="@{/admin/products/saveOrUpdate}" method="post" th:object="${product}" enctype="multipart/form-data" class="mt-5">
+                        <div class="row">
+                        
+                            <div class="col-7">
+                
+                                <input type="hidden" name="id" th:field="*{isEdit}">
+                                <input type="hidden" class="form-control" required th:field="*{productId}" name="name" id="name"
+                                        placeholder="Enter name">
+                                <div class="form-group">
+                                    <label for="name">Tên sản phẩm</label>
+                                    <input type="text" class="form-control"  th:field="*{name}" name="name" id="name"
+                                        placeholder="Enter name">
+                                        <small id="name" th:if="${#fields.hasErrors('name')}" class="form-text text-danger">Vui lòng nhập tên sản phẩm</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Danh mục sản phẩm</label>
+                                    <select class="form-control" th:field="*{categoryId}" id="category" name="category">
+                                        <option th:each="category :${categories}"
+                                                th:value="${category.categoryId}"
+                                                th:text="${category.name}"
+                                        >
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity">Số lượng</label>
+                                    <input type="text" class="form-control" th:field="*{quantity}"  id="quantity" aria-describedby="quantityhelpId" placeholder="Quantity">
+                                    <small id="quantityhelpId" th:if="${#fields.hasErrors('quantity')}" class="form-text text-danger">Vui lòng số lượng phải lớn hơn 0</small>
+                                </div>
+                                <div class="input-group form-group">
+                                    <span class="input-group-text">Đơn giá</span>
+                                    <input type="number" th:field="*{unitPrince}" name="unitPrice" id="unitPrice" class="form-control" placeholder="unitPrice" aria-describedby="unitPrice" >
+                                    <span class="input-group-text">$</span>
+                                
+                                </div>
+                                <small id="unitPrice" th:if="${#fields.hasErrors('unitPrince')}" class="form-group form-text text-danger">Đơn giá phải lớn hơn 0</small>
+                                
+                            
+                            
+                                    </div>
+                                    <div class="col-3">
+                                        <p>Ảnh sản phẩm</p>
+                                        <div class="form-group">
+                                            <img src="#" id="imgPreview" height="100px" width="100px" th:src="@{${'/upload/' + product.image}}" style="margin-top: 20px" alt=" ">
+                                        </div>
+                                        <div class="custom-file" style="width: 430px;">
+                                            <input type="file"  class="custom-file-input" name="imageFile"  id="productImage"/>
+                                            <label  name="image" class="custom-file-label" for="productImage">Choose file</label>
+                                            <input type="hidden" name="imgName" th:value="${product.image}">
+                                        </div>
+                                        
+                                    
+                                        <div class="input-group form-group mt-3" style="width: 430px;">
+                                            <span class="input-group-text">Giảm giá</span>
+                                            <input  th:field="*{discount}" type="text" name="discount" id="discount" class="form-control"  aria-describedby="discount" placeholder="Discount">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <small id="discount" th:if="${#fields.hasErrors('discount')}" class="form-group form-text text-danger">Vui lòng không để trống giảm giá</small>
+                        
+                                    
+                                        <div class="form-group"style="width: 430px;">
+                                            <label for="">Tình trạng</label>
+                                            <select class="form-control" name="status" id="status"  th:field="*{status}">
+                                            <option value="1">Hết hàng</option>
+                                            <option value="2">Đang giảm giá</option>
+                                            <option value="3"> Đặc sắc</option>
+                                            <option value="4">Mua nhiều nhất</option>
+                        
+                                            
+                        
+                                            </select>
+                                            <small id="status" th:if="${#fields.hasErrors('status')}" class="form-text text-danger">Vui lĂ²ng nháº­p tĂ¬nh tráº¡ng sáº£n pháº©m</small>
+                        
+                                        </div>
+                                    
+                            
+                                    
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                    <label for="discription">Mô tả</label>
+                                    <textarea th:field="*{description}" class="form-control" name="description" id="description" rows="5"  aria-describedby="de"></textarea>
+                                    <small id="description" th:if="${#fields.hasErrors('description')}" class="form-text text-danger">Vui lòng nhập mô tả</small>
+                
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <a th:href="@{/admin/products/add}" class="btn btn-success" ><i class="far fa-plus-square"></i> Mới</a>
+                
+                                    <button  class="btn btn-primary"><i class="fas fa-save"></i> 
+                                    <span th:if="${product.isEdit}">Cập nhật</span>
+                                                <span th:unless="${product.isEdit}">Lưu</span>
+                                    </button>
+                
+                                    <a th:href="@{/admin/products/searchpaginated}" class="btn btn-info float-right"><i class="fas fa-list" ></i> Danh sách sản phẩm</a>
+                                </div>
+                            </div>
+        
+            
+            
+                    
+                </div>
+            </main>
+            </div>
+
+
+                
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script>
+        function readURL(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#imgPreview').attr('src', e.target.result).width(100).height(100);
+                }
+                reader.readAsDataURL(input.files[0])
+            }
+        }
+        $('#productImage').change(function(){
+            readURL(this);
+        });
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+    <script th:src="@{/Layout/bootstrap.bundle.min.js}"></script>
+
+    <script th:src="@{https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js}" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script th:src="@{/Layout/dashboard.js}"></script>
+
+
+    <script th:src="@{https://code.jquery.com/jquery-3.4.1.slim.min.js}"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js}"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js}"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    </body>
+    <footer><h3>footer</h3></footer>
+    </html>

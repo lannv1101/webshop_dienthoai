@@ -1,0 +1,1060 @@
+		<!DOCTYPE html>
+		<html lang="UTF-8" xmlns:th="http://www.thymeleaf.org"
+
+		>
+		<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" th:href="@{/style/css/style-main.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{http://fonts.googleapis.com/css?family=Open+Sans}" media="all" />
+		<title>Tech Shop</title>
+		</head>
+
+		<body class="category-list">
+
+		<div id="box-header"> 
+			<div class="header-container">
+				<div class="header"> 
+					<div class="box-header-01">
+						<div class="container">
+							<div class="row">
+							<div class="logo">
+						
+							</div>
+							<div class="menu">
+								<div class="box-main-menu">
+									<div class="main-menu">
+										<ul>
+											<li class="item1 first"><a th:href="@{/techshop/home}">Home</a></li>
+											<li class="item2 megamenu-parent"><a th:href="@{grid.html}">Tablets</a>
+											<div class="vt_megamenu_content">
+											<div class="mega-menu-01">
+											<div class="menu-01 menu-01-cate">
+											<div class="title"><span>Categories</span></div>
+											<ul class="content-col">
+											<li class="first"><a class="mega-lap" th:href="@{detail.html}"><span>Laptop</span></a></li>
+											<li><a class="mega-tvi" th:href="@{detail.html}"><span>TV</span></a></li>
+											<li><a class="mega-mob" th:href="@{detail.html}"><span>Mobile</span></a></li>
+											<li><a class="mega-tab" th:href="@{detail.html}"><span>Tablet</span></a></li>
+											<li><a class="mega-cam" th:href="@{detail.html}"><span>Camera</span></a></li>
+											<li class="last"><a class="mega-rad" th:href="@{detail.html}"><span>Radio</span></a></li>
+											</ul>
+											</div>
+											<div class="menu-01 menu-01-top">
+											<div class="title"><span>Tops</span><span class="hot">Hot</span></div>
+											<ul class="content-col">
+											<li class="first"><a href="detail.html"><span>Smartphones</span></a></li>
+											<li><a href="detail.html"><span>Accessories</span></a></li>
+											<li><a href="detail.html"><span>Headsets</span></a></li>
+											<li><a href="detail.html"><span>Batteries</span></a></li>
+											<li><a href="detail.html"><span>Screen Protectors</span></a></li>
+											<li class="last"><a href="detail.html"><span>Memmory Cards</span></a></li>
+											</ul>
+											</div>
+											<div id="feature" class="menu-01 menu-01-feature carousel-feature">
+											<div class="title"><span>Featured</span><span class="new">New</span></div>
+											<div class="carousel-inner">
+											<div class="item active">
+											<div class="image"><img alt="" th:src="@{/images/feature-mega01.png}" /></div>
+											<div class="carousel-caption-feature">
+											<div class="title-advan"><span class="name-advan">Ipad Air and iOS7</span>
+											<div class="text-des-advan"><span>At vero eos et accusamus et iusto odios un dignissimos ducimus qui blan ditiis prasixer esentium voluptatum</span></div>
+											</div>
+											</div>
+											</div>
+											<div class="item">
+											<div class="image"><img alt="" th:src="@{/images/feature-mega01.png}" /></div>
+											<div class="carousel-caption-feature">
+											<div class="title-advan"><span class="name-advan">Ipad Air and iOS7</span>
+											<div class="text-des-advan"><span>At vero eos et accusamus et iusto odios un dignissimos ducimus qui blan ditiis prasixer esentium voluptatum</span></div>
+											</div>
+											</div>
+											</div>
+											<div class="item">
+											<div class="image"><img alt="" th:src="@{/images/feature-mega01.png}" /></div>
+											<div class="carousel-caption-feature">
+											<div class="title-advan"><span class="name-advan">Ipad Air and iOS7</span>
+											<div class="text-des-advan"><span>At vero eos et accusamus et iusto odios un dignissimos ducimus qui blan ditiis prasixer esentium voluptatum</span></div>
+											</div>
+											</div>
+											</div>
+											</div>
+											</div>
+											<div class="menu-01 menu-01-sale">
+											<div class="title"><span>Sale</span></div>
+											<div class="content"><img alt="" th:src="@{/images/sale-mega-01.png}" />
+											<p class="description">At vero eos et accusamus et iusto odios un dignissimos ducimus qui blan ditiis prasixer esentium voluptatum</p>
+											<div class="shop-now"><a title="Shop now" href="detail.html"><span>Shop now</span></a></div>
+											</div>
+											</div>
+											</div>
+											</div>
+											</li>
+											<li class="item3 megamenu-parent"><a href="grid.html">smart phone</a>
+												<div class="vt_megamenu_content">
+													<div class="mega-menu-02">
+													<h1 class="title">MOST POPULAR</h1>
+														<div class="block row vt-slider vt-slider67">
+													<div class="slider-inner">
+														<div class="container-slider">
+															<div class="products-grid">
+															<div class="item">
+					<div class="item-wrap">
+						<div class="item-image">
+								<a class="product-image no-touch" href="detail.html" title="Ipad Air and iOS7">
+								<img class="first_image" th:src="@{/images/product/larg/demo9.jpg}" alt="Ipad Air and iOS7" /> 
+								</a>
+								<div class="item-btn">
+									<div class="box-inner">
+									<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+									<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+									<span class="qview">
+										<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+									</span>
+									</div>
+								</div>
+								<a title="Add to cart" class="btn-cart">&nbsp;</a>
+							</div>
+							<div class="pro-info">
+								<div class="pro-inner">
+									<div class="pro-title product-name"><a href="detail.html">Ipad Air and iOS7</a></div>
+									<div class="pro-content">
+									<div class="wrap-price">
+										<div class="price-box">
+											<span class="regular-price">
+											<span class="price">$800.00</span></span>
+										</div>
+									</div>
+									<div class="ratings">
+										<div class="rating-box">
+											<div class="rating" style="width:80%"></div>
+										</div>
+										<span class="amount"><a href="detail.html">1(s)</a></span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						</div>
+						<div class="item">
+					<div class="item-wrap">
+						<div class="item-image">
+								<a class="product-image no-touch" href="detail.html" title="Ipad Air and iOS7">
+								<img class="first_image" th:src="@{/images/product/larg/demo1.jpg}" alt="Ipad Air and iOS7" /> 
+								</a>
+								<div class="item-btn">
+									<div class="box-inner">
+									<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+									<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+									<span class="qview">
+										<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+									</span>
+									</div>
+								</div>
+								<a title="Add to cart" class="btn-cart">&nbsp;</a>
+							</div>
+							<div class="pro-info">
+								<div class="pro-inner">
+									<div class="pro-title product-name"><a href="detail.html">Ipad Air and iOS7</a></div>
+									<div class="pro-content">
+									<div class="wrap-price">
+										<div class="price-box">
+											<span class="regular-price">
+											<span class="price">$800.00</span></span>
+										</div>
+									</div>
+									<div class="ratings">
+										<div class="rating-box">
+											<div class="rating" style="width:80%"></div>
+										</div>
+										<span class="amount"><a href="detail.html">1(s)</a></span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						</div>
+						<div class="item">
+						<div class="item-wrap">
+							<div class="item-image">
+									<a class="product-image no-touch" href="detail.html" title="Ipad Air and iOS7">
+									<img class="first_image" th:src="@{/images/product/larg/demo6.jpg}" alt="Ipad Air and iOS7" /> 
+									</a>
+									<div class="item-btn">
+										<div class="box-inner">
+										<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+										<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+										<span class="qview">
+											<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+										</span>
+										</div>
+									</div>
+									<a title="Add to cart" class="btn-cart">&nbsp;</a>
+								</div>
+								<div class="pro-info">
+									<div class="pro-inner">
+										<div class="pro-title product-name"><a href="detail.html">Ipad Air and iOS7</a></div>
+										<div class="pro-content">
+										<div class="wrap-price">
+											<div class="price-box">
+												<span class="regular-price">
+												<span class="price">$800.00</span></span>
+											</div>
+										</div>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width:80%"></div>
+											</div>
+											<span class="amount"><a href="detail.html">1(s)</a></span>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							</div>
+							<div class="item">
+						<div class="item-wrap">
+							<div class="item-image">
+									<a class="product-image no-touch" href="detail.html" title="Ipad Air and iOS7">
+									<img class="first_image" th:src="@{/images/product/larg/demo7.jpg}" alt="Ipad Air and iOS7" /> 
+									</a>
+									<div class="item-btn">
+										<div class="box-inner">
+										<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+										<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+										<span class="qview">
+											<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+										</span>
+										</div>
+									</div>
+									<a title="Add to cart" class="btn-cart">&nbsp;</a>
+								</div>
+								<div class="pro-info">
+									<div class="pro-inner">
+										<div class="pro-title product-name"><a href="detail.html">Ipad Air and iOS7</a></div>
+										<div class="pro-content">
+										<div class="wrap-price">
+											<div class="price-box">
+												<span class="regular-price">
+												<span class="price">$800.00</span></span>
+											</div>
+										</div>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width:80%"></div>
+											</div>
+											<span class="amount"><a href="detail.html">1(s)</a></span>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							</div>
+							<div class="item">
+						<div class="item-wrap">
+							<div class="item-image">
+									<a class="product-image no-touch" href="detail.html" title="Ipad Air and iOS7">
+									<img class="first_image" th:src="@{/images/product/larg/demo8.jpg}" alt="Ipad Air and iOS7" /> 
+									</a>
+									<div class="item-btn">
+										<div class="box-inner">
+										<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+										<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+										<span class="qview">
+										<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+										</span>
+										</div>
+									</div>
+									<a title="Add to cart" class="btn-cart">&nbsp;</a>
+								</div>
+								<div class="pro-info">
+									<div class="pro-inner">
+										<div class="pro-title product-name"><a href="detail.html">Ipad Air and iOS7</a></div>
+										<div class="pro-content">
+										<div class="wrap-price">
+											<div class="price-box">
+												<span class="regular-price">
+												<span class="price">$800.00</span></span>
+											</div>
+										</div>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width:80%"></div>
+											</div>
+											<span class="amount"><a href="detail.html">1(s)</a></span>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							</div>
+							<div class="item">
+						<div class="item-wrap">
+							<div class="item-image">
+									<a class="product-image no-touch" href="detail.html" title="Ipad Air and iOS7">
+									<img class="first_image" th:src="@{/images/product/larg/demo9.jpg}" alt="Ipad Air and iOS7" /> 
+									</a>
+									<div class="item-btn">
+										<div class="box-inner">
+										<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+										<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+										<span class="qview">
+											<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+										</span>
+										</div>
+									</div>
+									<a title="Add to cart" class="btn-cart">&nbsp;</a>
+								</div>
+								<div class="pro-info">
+									<div class="pro-inner">
+										<div class="pro-title product-name"><a href="detail.html">Ipad Air and iOS7</a></div>
+										<div class="pro-content">
+										<div class="wrap-price">
+											<div class="price-box">
+												<span class="regular-price">
+												<span class="price">$800.00</span></span>
+											</div>
+										</div>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width:80%"></div>
+											</div>
+											<span class="amount"><a href="detail.html">1(s)</a></span>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							</div>
+							<div class="item">
+						<div class="item-wrap">
+							<div class="item-image">
+									<a class="product-image no-touch" href="detail.html" title="Ipad Air and iOS7">
+									<img class="first_image" th:src="@{/images/product/larg/demo10.jpg}" alt="Ipad Air and iOS7" /> 
+									</a>
+									<div class="item-btn">
+										<div class="box-inner">
+										<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+										<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+										<span class="qview">
+											<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+										</span>
+										</div>
+									</div>
+									<a title="Add to cart" class="btn-cart">&nbsp;</a>
+								</div>
+								<div class="pro-info">
+									<div class="pro-inner">
+										<div class="pro-title product-name"><a href="detail.html">Ipad Air and iOS7</a></div>
+										<div class="pro-content">
+										<div class="wrap-price">
+											<div class="price-box">
+												<span class="regular-price">
+												<span class="price">$800.00</span></span>
+											</div>
+										</div>
+										<div class="ratings">
+											<div class="rating-box">
+												<div class="rating" style="width:80%"></div>
+											</div>
+											<span class="amount"><a href="detail.html">1(s)</a></span>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!--end item wrap -->
+							</div>
+							
+																</div>
+															</div>
+															
+														</div>
+														
+														</div>
+
+													</div>
+													</div>
+
+											</li>
+											<li class="item4"><a href="grid.html">laptops </a></li>
+											<li class="item5"><a href="grid.html">Desktops</a></li>
+											<li class="item6"><a href="detail.html">Computer Accessories</a></li>
+											<li class="item7 last"><a th:href="@{/techshop/cart}">Cart</a></li>
+										</ul>
+									</div>
+										</div>
+									<div>
+								</div>
+							</div>
+							<div class="account-and-cart">
+							<div class="my-account">
+							<div class="content">
+								<ul class="left">
+									<li><a class="top-link-myaccount" href="detail.html">My Account</a></li>
+									
+									<li><a class="top-link-checkout" th:href="@{/techshop/checkorders}">Checkout</a></li>
+									<li th:if="${email==null}" ><a class="top-link-login" th:href="@{/techshop/login}">Log In</a></li>
+									<li th:if="${email!=null}" ><a class="top-link-login" th:href="@{/techshop/logout}">Log out</a></li>
+								</ul>
+								<ul class="right">
+									<li class="language"><a href="detail.html" class="selected"><img th:src="@{/images/flags/flag-default.jpg}" alt=""/>French</a>
+											<ul>
+												<li><a href="home-01.html"><img th:src="@{/images/flags/flag-default.jpg}" alt=""/>English</a></li>
+												<li><a href="home-02.html"><img th:src="@{/images/flags/flag-french.jpg}" alt=""/>French</a></li>
+											</ul>
+									</li>
+								</ul>
+							</div>
+							</div>
+							<div class="box-cart">
+								<div class="cart-mini">
+									<div class="title" >
+									<span th:text="${NoOfItem}" class="item"></span>
+									</div>
+									<div class="block-content">
+									<div class="inner">
+										<p class="block-subtitle">Recently added item(s)</p>
+										<ol id="cart-sidebar" class="mini-products-list">
+											<li class="item" th:each=" item, iStat : ${cartItems}">
+												<a href="detail.html"  class="product-image">
+												<img class="img-fulid" style="width:50%;"  th:src="@{${'/upload/' + item.image}}"  />
+												<p class="product-name"><a  th:text="${item.name}"></a></p>
+												</a>
+												<a href="detail.html" class="btn-remove">Remove This Item</a>
+												<a href="detail.html" title="Edit item" class="btn-edit">Edit item</a>
+												<div class="product-details">
+												
+												<span class="price" >$ [[${item.unitPrince}]]</span>       
+													<div class="qty-abc">
+												<a title="Decrement" class="qty-change-left" href="detail.html">down</a>
+												<input class="input-text qty" type="text" value="1" />
+												<a title="Increment" class="qty-change-right" href="detail.html">up</a>
+												</div>
+												</div>
+											</li>
+										</ol>
+										<div class="summary">
+											<p class="subtotal">
+												<span class="label">Subtotal:</span> <span class="price" th:text="${total}">$</span>                                                                        
+											</p>
+										</div>
+										<div class="actions">
+											<div class="a-inner">
+												<a class="btn-mycart" th:href="@{/techshop/cart}" title="View my cart">view my cart</a>
+												<a href="" title="Checkout" class="btn-checkout">Checkout</a>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>	
+					</div>
+						<div class="bgr-menu">
+						</div>
+					</div>
+					<div class="box-header-02">
+						<div class="container">
+							<div class="row">
+							<ul>
+							<li><a href="detail.html">Overview </a></li>
+							<li><a href="detail.html">Devices </a></li>
+							<li><a href="detail.html">Postpaid Plans</a></li>
+							<li><a href="detail.html">Prepaid Plans</a></li>
+							<li><a href="detail.html">Broadband Plans </a></li>
+							<li><a href="detail.html">Add-Ons </a></li>
+							<li><a href="detail.html">FAQs </a></li>
+							<li><a href="detail.html">Blog </a></li>
+							<li><a href="detail.html">About Us</a></li>
+							<li><a href="detail.html">Contact Us</a></li>
+							</ul>
+							</div>
+						</div>
+					</div>
+					<div class="box-header-03">
+						<div class="container">
+							<div class="row">
+								<span class="shipping"><a href="detail.html">Free Shipping-Free Returns</a></span>
+								<span class="gift"><a href="detail.html">Signature Gift Wrapping</a></span>
+								<span class="customer"><a href="detail.html">24/7 Customer Care</a></span>
+								<div class="box-search">
+								<form th:action="@{/techshop/home}">
+									<button><span>search</span></button>
+									<ul class="drop-search">
+										<li>
+										<span class="selected">All Categories </span>
+											<ul>
+												<li>All Categories </li>
+												<li>Cate 1</li>
+												<li>Cate 2</li>
+												<li>Cate 3</li>
+											</ul>
+										</li>
+									</ul>
+									<input name="name" id="name" type="text"  placeholder="search this site..."/>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="breadcrumbs">    
+				<div class="container">
+					<div class="row">
+						<ul>
+							<li class="home">
+								<a href="home-01.html" title="Go to Home Page">Home</a>
+								<span>|</span>
+							</li>
+							<li class="category3">
+							<strong>Mobile</strong>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+				<div class="row">
+					<div id="box-left" class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+					<div class="block block-layered-nav">
+						<div class="block-title">
+							<strong><span>Mobile</span></strong>
+						</div>
+						<div class="block-content">
+						<dl id="narrow-by-list">
+							<dt id="tab1" class="tab-accordion accordion-close">Apple</dt>
+							<dd class="tabcontent1" style="display:none;">
+							<ol>
+								<li ><a  href="grid.html?cat=5">Iphone 4</a></li>
+								<li ><a  href="grid.html?cat=6">Ipad 4s</a></li>
+								<li ><a  href="grid.html?cat=6">Ipad 5</a></li>
+								<li ><a  href="grid.html?cat=6">Ipad 5s</a></li>
+								<li ><a  href="grid.html?cat=6">Ipad 6s</a></li>
+								</ol>
+								</dd>
+								<dt id="tab11" class="tab-accordion accordion-open">Samsung</dt>
+								<dd class="tabcontent11">
+							<ol>
+								<li ><a  href="grid.html?cat=5">Samsung Glaxy S I</a></li>
+								<li ><a  href="grid.html?cat=6">Sangsung Glaxy S II</a></li>
+								<li ><a  href="grid.html?cat=6">Samsung Glaxy S III</a></li>
+								<li ><a  href="grid.html?cat=6">Samsung Glaxy Note II</a></li>
+								<li ><a  href="grid.html?cat=6">Samsung Glaxy Note III</a></li>
+								</ol>
+								</dd>
+								<dt id="tab12" class="tab-accordion accordion-close">HTC</dt>
+								<dd class="tabcontent12" style="display:none;">
+								<ol>
+								<li ><a  href="grid.html?cat=5">HTC Desire X</a></li>
+								<li ><a  href="grid.html?cat=6">HTC Desire Y</a></li>
+								</ol>
+								</dd>
+								<dt id="tab13" class="tab-accordion accordion-close">Blackberry</dt>
+								<dd class="tabcontent13" style="display:none;">
+								<ol>
+								<li ><a  href="grid.html?cat=5">Blackberry X</a></li>
+								<li ><a  href="grid.html?cat=6">Blackberry Y</a></li>
+								</ol>
+								</dd>
+						</dl>
+						</div>
+						<div class="block-title-shop-by">
+						<strong><span>Shop by</span></strong>
+						</div>
+						<div class="block-content">
+						<dl id="narrow-by-list">
+								<dt id="tab2" class="tab-accordion accordion-open"> Price</dt>
+								<dd class="tabcontent2">
+									<div class="price">
+									<div class="range-wrap"><div id="slider-range"></div>
+									</div>
+									<div class="text-box"><div class="price-from">
+										$ <input type="text" name="min" id="minPrice" class="priceTextBox" value="400"/></div><div class="price-to"> <input type="text" name="max" id="maxPrice" class="priceTextBox" value="1000"/></div>					
+										<a class="go" href="javascript:void(0)">Fillter</a>
+										<input type="hidden" id="amount" readonly="readonly" style="background:none; border:none;" value="$400 - $1000" />
+									</div>
+									</div>	
+								</dd>
+								<dt id="tab4" class="tab-accordion accordion-close">Color</dt>
+									<dd class="tabcontent4" style="display:none;"><ol>
+									<li class='licolor'><a  class='itemcolor colorwhite' href="grid.html?color=25">White_#ffffff</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#e66054' href="grid.html?color=8">Blue _#e66054</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#d0b7cc' href="grid.html?color=10">Green_#d0b7cc</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#107a8e' href="grid.html?color=9">Yellow _#107a8e</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#a7bc93' href="grid.html?color=24">Pink_#a7bc93</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#d3b627' href="grid.html?color=23">Lightblue_#d3b627</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#b4b3ae' href="grid.html?color=22">Gray_#b4b3ae</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#502006' href="grid.html?color=21">Red_#502006</a></li>
+									<li class='licolor'><a  class='itemcolor' style='background:#311e21' href="grid.html?color=20">violet_#311e21</a></li>
+									</ol>
+									</dd>
+								<dt id="tab3" class="tab-accordion accordion-open">Manufacturer</dt>
+								<dd class="tabcontent3">
+								<ol>
+									<li ><a  href="grid.html?manufacturer=11">Apple </a>(2)</li>
+									<li > <a   href="grid.html?manufacturer=13">Samsung</a>(5) </li>
+									<li ><a href="grid.html?manufacturer=14">HTC</a>(3) </li>
+									<li ><a   href="grid.html?manufacturer=12">Blackberry</a>(2) </li>
+									</ol>
+									</dd>
+									
+									<dt id="tab5" class="tab-accordion accordion-close">Size</dt>
+								<dd class="tabcontent5" style="display:none;">
+								<ol> 
+									<li class="size"><a href="grid.html?size=4">L</a></li>
+									<li class="size"><a  href="grid.html?size=3">S</a></li>
+									<li class="size"><a  href="grid.html?size=5">X</a></li>
+									<li class="size"><a  href="grid.html?size=6">XL</a></li>
+									</ol>
+									</dd>
+								</dl>
+								</div>
+					</div>
+					<div class="block block-compare">
+						<div class="block-title">
+							<strong><span>COMPARE PRODUCTS (2)</span></strong>
+						</div>
+						<div class="content">
+						<ul>
+						<li><a href="detail.html">Ipad Air and iOS7</a></li>
+						<li><a href="detail.html">Ipad Air and iOS7</a></li>
+						</ul>
+						</div>
+						
+						
+					</div>
+					<div class="block box-banner">	
+					<div id="box-banner" class="carousel slide" data-ride="carousel" data-interval="1500"><ol class="carousel-indicators">
+					<li class="active" data-target="#box-banner" data-slide-to="0"></li>
+					<li data-target="#box-banner" data-slide-to="1"></li>
+					<li data-target="#box-banner" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+					<div class="item active"><a href="detail.html"><img th:src="@{/images/banner13.png}" alt="banner" /></a>
+						<div class="std">
+						<span class="t1">up to 45%</span>
+						<span class="t2">Nokia Lumia 920</span>
+						<span class="t3">At verov eos et accusamus et iusto ods un dignissimos ducimus qui blan ditiis prasixer esentium</span>
+						</div>
+						<a class="gt-shop" href="detail.html">Shop Now</a>
+					</div>
+					<div class="item"><a href="detail.html"><img th:src="@{/images/banner14.png}" alt="banner" /></a>
+						<div class="std">
+						<span class="t1">up to 50%</span>
+						<span class="t2">Nokia Lumia 920</span>
+						<span class="t3">At verov eos et accusamus et iusto ods un dignissimos ducimus qui blan ditiis prasixer esentium</span>
+						</div>
+						<a class="gt-shop" href="detail.html">Shop Now</a>
+					
+					</div>
+					<div class="item"><a href="detail.html"><img th:src="@{/images/banner15.png}" alt="banner" /></a>
+						<div class="std">
+						<span class="t1">up to 80%</span>
+						<span class="t2">Nokia Lumia 920</span>
+						<span class="t3">At verov eos et accusamus et iusto ods un dignissimos ducimus qui blan ditiis prasixer esentium</span>
+						</div>
+						<a class="gt-shop" href="detail.html">Shop Now</a>
+					
+					</div>
+					</div>
+					</div>
+					</div>
+					</div>
+					<div id="main" class="col-lg-9 col-md-9 col-sm-8 col-xs-12 col-main">
+					<div class="wrap-banner-cate">
+					<a class="cate-img" href="detail.html"><img th:src="@{/images/banner-2.png}" alt="" /></a>
+					</div>
+						<div class="page-title category-title">
+							<h1>Mobile</h1>
+						</div>
+						<div id="catalog-listing">
+							<div class="category-products page-product-list">
+								<div class="toolbar-top">
+								<div class="toolbar">
+										<div class="pager">
+										<div class="pages">
+											<strong>Pages</strong>
+											<ol>
+										<li class="current" th:each=" pageNumber : ${pageNumbers}"
+										th:if="${productPage.totalPages >1}"
+										th:class="${pageNumber == productPage.number+1} ? 'page-item active':'page-item'">
+										<a th:href="@{/techshop/home(name=${name}, size =${productPage.size}, page=${pageNumber})}"
+											class="page-link" th:text="${pageNumber}">
+
+										</a>
+									</li>
+											</ol>
+											
+										</div>
+						
+									</div>
+									<div class="sorter">
+										<label>View as</label>
+										<p class="view-mode">
+											<a href="grid.html" title="List" class="list">Grid</a>                            
+											<strong title="Grid" class="grid">List</strong>                            
+																		
+										</p>
+										<div class="sort-by">
+											<label>Sort By</label>
+											<div class="wrap-sb">
+											<div class="selected-order"></div>
+											<ul class="select-order">
+												<li><a href="grid.html?dir=asc&amp;order=position"  class="selected">Position</a></li>
+												<li><a th:href="@{/techshop/home}">Name</a></li>
+												<li><a th:href="@{/techshop/home/sortByUnitPrince}">Price</a></li>
+											</ul>
+											</div>
+											<a class="desc" href="grid.html?dir=desc&amp;order=position" title="Set Descending Direction">
+											</a>
+										</div>
+										<div class="limiter">
+											<label>Show</label>
+											<div class="wrap-show">
+										
+											<form action="">
+								<div class="form-inline float-left">
+								
+									<select name="size" id="size" class="form-control"
+									onchange="this.form.submit()"
+									>
+										<option th:selected="${productPage.size ==5}" value="5">5</option>
+										<option th:selected="${productPage.size ==10}" value="10">10</option>
+										<option th:selected="${productPage.size ==15}" value="15">15</option>
+										<option th:selected="${productPage.size ==20}" value="20">20</option>
+										<option th:selected="${productPage.size ==30}" value="30">30</option>
+									</select>
+								</div>
+							</form>
+											</div>
+											<label class="stylepp">per page</label>
+										</div>
+									</div>
+								</div>
+								</div>
+								<ol class="products-list">
+									<li class="item">
+										<div class="inner-item " th:each=" product, iStat : ${productPage.content}">
+											<div class="item-image">
+											<input type="hidden" th:value="${product.productId}">
+												<div class="inner"> 
+												<a class="product-image no-touch" th:href="@{/techshop/detail/{productId}(productId = ${product.productId})}" title="${product.name}">  
+												<img class="first_image" th:src="@{'/upload/'+${product.image}} " alt="My Download Product" /> 
+												</a>                
+												</div>
+											</div>
+											<div class="product-shop">
+												<div class="inner">
+												<h2 class="product-name"><a class="product-image" href="detail.html" title="My Download Product" th:text="${product.name}"></a></h2>
+												<div class="price-box">
+													<span class="regular-price" id="product-price-12">
+													<span class="price" >$ [[${product.unitPrince}]]</span>                                    
+													</span>
+												</div>
+												<div class="ratings">
+													<div class="rating-box">
+														<div class="rating" style="width:80%"></div>
+													</div>
+													<span class="amount"><a href="detail.html">1(s)</a></span>
+												</div>
+												
+												<div class="desc std" th:text="${product.description}">
+												</div>
+												<div class="wrap-btn-prolist">
+													<div class="item-btn">
+														<div class="box-inner">
+															<a title="Add to wishlist" href="detail.html" class="link-wishlist">&nbsp;</a>
+															<a title="Add to compare" href="detail.html" class="link-compare">&nbsp;</a>
+															<span class="qview"><a href="detail.html" ></a>
+															<a class="vt_quickview_handler" data-original-title="Quick View" data-placement="left" data-toggle="tooltip" href="detail.html"><span>Quick View</span></a>
+														</span>
+														</div>
+													</div>
+													<a title="Add to cart" class="btn-cart" th:href="@{/techshop/addToCart/{productId}(productId = ${product.productId})}"><span>Add to Cart</span></a>
+												</div>
+												</div>
+											</div>
+										</div>
+									</li>
+					
+								</ol>
+								<div class="toolbar-bottom">
+								<div class="toolbar">
+									<div class="pager">
+										<div class="pages">
+											<strong>Pages</strong>
+											<ol>
+											<li class="current" th:each=" pageNumber : ${pageNumbers}"
+										th:if="${productPage.totalPages >1}"
+										th:class="${pageNumber == productPage.number+1} ? 'page-item active':'page-item'">
+										<a th:href="@{/techshop/home(name=${name}, size =${productPage.size}, page=${pageNumber})}"
+											class="page-link" th:text="${pageNumber}">
+
+										</a>
+									</li>
+											</ol>
+										</div>
+									</div>
+									<div class="sorter">
+										<label>View as</label>
+										<p class="view-mode">
+											<strong title="Grid" class="grid">Grid</strong>                            
+											<a href="grid.html?mode=list" title="List" class="list">List</a>                                
+										</p>
+										<div class="sort-by">
+											<label>Sort By</label>
+											<div class="wrap-sb">
+											<div class="selected-order"></div>
+											<ul class="select-order">
+												<li><a href="grid.html?dir=asc&amp;order=position"  class="selected">Position</a></li>
+												<li><a th:href="@{/techshop/home}">Name</a></li>
+												<li><a th:href="@{/techshop/home/sortByUnitPrince}">Price</a></li>
+											</ul>
+											</div>
+											<a class="desc" href="grid.html?dir=desc&amp;order=position" title="Set Descending Direction">
+											</a>
+										</div>
+										<div class="limiter">
+											<label>Show</label>
+											<div class="wrap-show">
+														<form action="">
+								<div class="form-inline float-left">
+								
+									<select name="size" id="size" class="form-control"
+									onchange="this.form.submit()"
+									>
+										<option th:selected="${productPage.size ==5}" value="5">5</option>
+										<option th:selected="${productPage.size ==10}" value="10">10</option>
+										<option th:selected="${productPage.size ==15}" value="15">15</option>
+										<option th:selected="${productPage.size ==20}" value="20">20</option>
+										<option th:selected="${productPage.size ==30}" value="30">30</option>
+									</select>
+								</div>
+							</form>
+											</div>
+											<label class="stylepp">per page</label>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>		
+		</div>
+		<div id="box-footer">   
+			<div class="box-footer-top">		
+				<div class="container">
+					<div class="row">
+						<div class="row">    
+							<div class="block-title"><span>Connect with</span></div>	
+							<div class="box-connect col-lg-6 col-md-6 col-sm-6 col-xs-6">
+							<a href="detail.html" class="tweeter">tweeter</a>
+							<a href="detail.html" class="face-book">face book</a>
+							<a href="detail.html" class="no-name">no-name</a>
+							<a href="detail.html" class="pinseter">pinseter</a>
+							<a href="detail.html" class="google">google+</a>
+							<a href="detail.html" class="init">init</a>
+							</div>	
+							<div class="box-tweeter col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<div class="block-title"><span>tweeter</span></div>	
+								<div class="content">
+								Leo aliquet, dictum orci at, varius ligula. Duis aliquet pellentesque tincidunt. Vestibulum finibus ceo aliquet, dictum orci at, varius ligula. Duis aliquet 
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box-footer-middle">
+				<div class="container">
+					<div class="row">
+						<div class="row">
+						<div class="block block-info col-lg-3 col-md-3 col-sm-3 col-xs-12">       	
+						<div class="block-title"><span>Information</span></div>
+							<div class="block-content">
+							<ul>
+							<li><a href="detail.html">Site Map</a></li>
+							<li><a href="detail.html">Search Terms</a></li>
+							<li><a href="detail.html">Advanced Search</a></li>
+							<li><a href="detail.html">Our stores</a></li>
+							<li><a href="detail.html">About Us</a></li>
+							<li><a href="detail.html">Blog</a></li>
+							<li><a href="detail.html">Contact Us</a></li>
+							</ul>
+							</div>		       
+						</div>
+						<div class="block block-customer col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<div class="block-title"><span>Customer Service</span></div>
+				<div class="block-content">
+				<ul>
+				<li><a href="detail.html">View Cart</a></li>
+				<li><a href="detail.html">My Account</a></li>
+				<li><a href="detail.html">Order Status</a></li>
+				<li><a href="detail.html">Shop By Brand</a></li>
+				<li><a href="detail.html">Trade-in Program</a></li>
+				<li><a href="detail.html">Testimonial</a></li>
+				<li><a href="detail.html">FAQs</a></li>
+				</ul>
+				</div>	       
+			</div>
+						<div class="block block-galary col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<div class="block-title"><span>Gallery</span></div>
+								<div id="links" class="carousel slide" data-ride="carousel">
+								<ol class="carousel-indicators">
+									<li data-target="#links" data-slide-to="0" class="active"></li>
+									<li data-target="#links" data-slide-to="1"></li>
+									<li data-target="#links" data-slide-to="2"></li>
+								</ol>
+								<div class="carousel-inner" role="listbox">
+									<div class="item active">
+									<a th:src="@{/images/product/larg/demo1.jpg}" title="Glary image 01" data-gallery>
+									<img th:src="@{/images/product/larg/demo1.jpg}"/>
+									</a>
+									<a th:src="@{/images/product/larg/demo2.jpg}" title="Glary image 02" data-gallery>
+									<img th:src="@{/images/product/larg/demo2.jpg}">
+									</a>
+									<a th:src="@{/images/product/larg/demo3.jpg}" title="Glary image 03" data-gallery>
+									<img th:src="@{/images/product/larg/demo3.jpg}">
+									</a>
+									<a th:src="@{/images/product/larg/demo4.jpg}" title="Glary image 04" data-gallery>
+									<img th:src="@{/images/product/larg/demo4.jpg}"/>
+									</a>
+									<a th:src="@{/images/product/larg/demo5.jpg}" title="Glary image 05" data-gallery>
+									<img th:src="@{/images/product/larg/demo5.jpg}"/>
+									</a>
+									<a th:src="@{/images/product/larg/demo6.jpg}"title="Glary image 06" data-gallery>
+									<img th:src="@{/images/product/larg/demo6.jpg}"/>
+									</a>
+									</div>
+									<div class="item">
+									<a th:href="@{/images/product/larg/demo7.jpg}" title="Glary image 07" data-gallery>
+									<img th:src="@{/images/product/larg/demo7.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo8.jpg}" title="Glary image 08" data-gallery>
+									<img th:src="@{/images/product/larg/demo8.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo9.jpg}" title="Glary image 09" data-gallery>
+									<img th:src="@{/images/product/larg/demo9.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo10.jpg}" title="Glary image 10" data-gallery>
+									<img th:src="@{/images/product/larg/demo10.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo11.jpg}" title="Glary image 11" data-gallery>
+									<img th:src="@{/images/product/larg/demo11.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo12.jpg}" title="Glary image 12" data-gallery>
+									<img th:src="@{/images/product/larg/demo12.jpg}"/>
+									</a>
+									</div>
+									<div class="item">
+									<a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13" data-gallery>
+									<img th:src="@{/images/product/larg/demo13.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13" data-gallery>
+									<img th:src="@{/images/product/larg/demo13.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13" data-gallery>
+									<img th:src="@{/images/product/larg/demo13.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13" data-gallery>
+									<img th:src="@{/images/product/larg/demo13.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13" data-gallery>
+									<img th:src="@{/images/product/larg/demo13.jpg}"/>
+									</a>
+									<a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13" data-gallery>
+									<img th:src="@{/images/product/larg/demo13.jpg}"/>
+									</a>
+									</div>
+								</div>
+								</div>
+							<div class="block-content">
+							<ul>
+							<li><a href="detail.html" class="view-all">View all</a></li>
+							</ul>
+							</div>
+							
+							<div id="blueimp-gallery" class="blueimp-gallery">
+							
+								<div class="slides"></div>
+							
+								<h3 class="title"></h3>
+								<a class="prev">‹</a>
+								<a class="next">›</a>
+								<a class="close">×</a>
+								<a class="play-pause"></a>
+								<ol class="indicator"></ol>
+							
+								<div class="modal fade">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" aria-hidden="true">&times;</button>
+												<h4 class="modal-title"></h4>
+											</div>
+											<div class="modal-body next"></div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default pull-left prev">
+													<i class="glyphicon glyphicon-chevron-left"></i>
+													Previous
+												</button>
+												<button type="button" class="btn btn-primary next">
+													Next
+													<i class="glyphicon glyphicon-chevron-right"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> 
+								
+						</div>
+						<div class="block block-cu col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<div class="block-title"><span>Contact us</span></div>
+						<div class="block-content">
+						<ul>
+						<li class="item1"><span>Our business address is 1063 <br />Freelon Street San Francisco</span></li>
+						<li class="item2"><span>+ 020.566.6666</span></li>
+						<li class="item3"><a href="mailto:support@7-Up.com">support@7-Up.com</a></li>
+						</ul>
+						<div class="phone-nb"><a href="tel:0906868757">090.68.68.757</a></div>
+						</div>	        	
+						</div>
+						</div>	
+					</div>	
+				</div>	
+			</div>
+			<a id="gototop">Top</a>
+				<script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+				<script type="text/javascript" th:src="@{/style/bootstrap/js/bootstrap.min.js}"></script>
+				<script th:src="@{/js/galary-image/js/jquery.blueimp-gallery.min.js}"></script>
+				<script th:src="@{/js/galary-image/js/bootstrap-image-gallery.js}"></script>
+				<script type="text/javascript" th:src="@{/js/owl-carousel/owl.carousel.js}"></script>
+				<script type="text/javascript" th:src="@{/js/slideshow/jquery.themepunch.revolution.js}"></script>
+				<script type="text/javascript" th:src="@{/js/slideshow/jquery.themepunch.plugins.min.js}"></script> 
+				<script type="text/javascript" th:src="@{/js/price.js}"></script>
+				<script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+				<script type="text/javascript" th:src="@{/js/theme.js}"></script> 
+		</body>
+			
+
+		
+		
+
+		</html>

@@ -1,0 +1,280 @@
+  <!doctype html>
+  <html lang="en"  xmlns:th="http://www.thymeleaf.org"
+
+  >
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Hugo 0.79.0">
+      <title>Quản Lý TechShop</title>
+ <!-- Ionicons -->
+ <link rel="stylesheet" th:href="@{https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css}">
+      <link rel="canonical" th:href="@{https://getbootstrap.com/docs/5.0/examples/dashboard/}">
+      <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.1.1/css/all.css}" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    
+      
+
+      <!-- Bootstrap core CSS -->
+  <link th:href="@{/Layout/bootstrap.min.css}" rel="stylesheet">
+
+
+      <style>
+        .small-box .icon {
+    color: rgba(0,0,0,.15);
+   margin-inline: 200px;
+    z-index: 0;
+}
+.small-box .icon>i.fa, .small-box .icon>i.fab, .small-box .icon>i.fad, .small-box .icon>i.fal, .small-box .icon>i.far, .small-box .icon>i.fas, .small-box .icon>i.ion {
+    font-size: 70px;
+    top: 20px;
+}
+.small-box .icon>i {
+    font-size: 90px;
+  position: absolute;
+
+    right: 15px;
+    top: 15px;
+    transition: -webkit-transform .3s linear;
+    transition: transform .3s linear;
+    transition: transform .3s linear,-webkit-transform .3s linear;
+}
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+        .backgroud{
+          /* background-image: url("/images/login/logoindex.png");
+        width: 500px;
+        height: 500px; */
+        /* margin-left: 200px; */
+        margin-top: 100px;
+       
+        }
+        .main{
+        
+          height: 619px;
+        }
+        .logo{
+          /* image-resolution: url("images/login/logoindex.png"); */
+        }
+        .small-box>.inner{
+          padding: 10px;
+        }
+        .small-box{
+          border-radius: .25rem;
+          position: relative;
+        }
+        .bg-info, .bg-info>a {
+    color: #fff!important;
+}
+
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+        .small-box>.small-box-footer {
+    background-color: rgba(0,0,0,.1);
+    color: rgba(255,255,255,.8);
+    display: block;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+}
+      </style>
+
+      
+      <!-- Custom styles for this template -->
+      <link th:href="@{/Layout/dashboard.css}" rel="stylesheet">
+    </head>
+    <body>
+      
+  <header class="navbar navbar sticky-top flex-md-nowrap p-0 shadow" style="background-color: #f47216;">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Tech Shop Admin</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap" th:if="${account==null}">
+        <a class="nav-link" th:href="@{/admin/login}">Đăng nhập</a>
+      </li>
+      <li class="nav-item text-nowrap" th:if="${account!=null}">
+        <a class="nav-link" th:href="@{/admin/logout}">Đăng xuất</a>
+      </li>
+    </ul>
+    
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="logo"></div>
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" th:href="@{/admin/home}">
+                <span data-feather="home"></span>
+              Trang Chủ
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/admin/orders/add}">
+                <span data-feather="file"></span>
+                Quản Lý Đặt Hàng
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/admin/products/add}">
+                <span data-feather="shopping-cart"></span>
+                Quản Lý Sản Phẩm
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/admin/categories/add}">
+                <span data-feather="layers"></span>
+                Quản Lý Danh Mục
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/admin/customers/add}">
+                <span data-feather="users"></span>
+              Quản Lý Người Dùng
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/admin/accounts/new}">
+                <span data-feather="user"></span>
+                Quản Lý Tài Khoản
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="bar-chart-2"></span>
+              Thống Kê
+              </a>
+            </li>
+          
+          </ul>
+
+        
+          </ul>
+        </div>
+      </nav>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" >
+        <div class="row">
+        <div class="col-lg-3 col-6 mt-5">
+       
+          <div class="small-box bg-info">
+            
+            <div class="inner">
+              <h3>[[${countorders}]]</h3>
+
+              <p>Đơn Đặt Hàng</p>
+             
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+              
+            </div>
+           
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+          </div>
+           <!-- ./col -->
+           <div class="col-lg-3 col-6 mt-5">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>[[${SumAmountOrders}]]<sup style="font-size: 20px"> $</sup></h3>
+
+                <p>Doanh Thu</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6 mt-5">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>[[${CountCustomers}]]</h3>
+
+                <p>Người Dùng</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6 mt-5">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>[[${CountQuantity}]]</h3>
+
+                <p>Số lượng sản phẩm bán ra</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+       
+        <div class="backgroud " >
+          <div class="logo" ></div>
+          <h3 class="text-center" th:if="${message}==null">Chào mừng bạn đến với trang quản trị của ADMIN</h3> 
+          <h3 class="text-center" th:if="${message}!=null">Chào mừng bạn [[${message}]]  đến với trang quản trị của ADMIN</h3>
+        </div>
+       
+
+      </main>
+  
+      
+      
+
+        
+
+
+    
+      
+              
+        </div> 
+      
+    </div>
+  </div>
+
+
+      <script th:src="@{/Layout/bootstrap.bundle.min.js}"></script>
+
+        <script th:src="@{https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js}" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+        <script th:src="@{/Layout/dashboard.js}"></script>
+    
+    
+      <script th:src="@{https://code.jquery.com/jquery-3.4.1.slim.min.js}"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"></script>
+  <script th:src="@{https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js}"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"></script>
+  <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js}"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"></script>
+      </body>
+  </html>

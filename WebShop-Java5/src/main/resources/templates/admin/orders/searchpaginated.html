@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="UTF-8"  xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{admin/Layout.html}"
+    >
+  <head>
+    <title>Danh sách đơn đặt hàng</title>
+  </head>
+  <body>
+    <div class="card mt-5 container" layout:fragment="content">
+        <div class="card-header text-center">
+            <h2>Danh sách đơn đặt hàng</h2>
+        </div>
+        <div th:if="${message !=null}" class="alert alert-primary text-center" role="alert">
+            <i>[[${message}]]</i>
+        </div>
+         <div th:if="${error !=null}" class="alert alert-danger text-center" role="alert">
+            <i>[[${error}]]</i>
+        </div>
+        <div class="row mt-2 mb-2">
+            <div class="col">
+                <form th:action="@{/admin/orders/searchpaginated}">
+                    <div class="form-inline float-left">
+                        <label for="name">Mã Đơn Đặt Hàng: </label>
+                        <input type="number" class="form-control ml-2" name="orderId" id="orderId">
+
+                        <button class="btn btn-primary ml-2 mt-2">Tìm kiếm</button>
+                    </div>
+                </form>
+                <div class="float-right mr-2 mt-2">
+                    <a class="btn btn-primary" th:href="@{/admin/orders/add}">Thêm mới đơn đặt hàng</a>
+
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="row" th:if="${!orderPage.hasContent()}">
+            <div class="col">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Không tìm thấy sản phẩm</strong>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-inverse " th:if="${orderPage.hasContent()}">
+                <thead class="thead-inverse">
+                    <tr>
+
+                        <th>
+                            Mã đặt hàng
+                        </th>
+                        <th>
+                            Mã khách hàng đặt hàng
+                        </th>
+                        <th>Ngày đặt hàng</th>
+                        <th>Tổng tiền</th>
+                        
+
+                        <th>Tình trạng</th>
+
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each=" order, iStat :  ${orderPage.content}">
+
+                        <td>[[${order.orderId}]]</td>
+                        <td>[[${order.customer.customerId}]]</td>
+                        <td>[[${order.orderDate}]]</td>
+                        <td>[[${order.amount}]]</td>
+                   
+                        <td th:text="${order.status}==1?'Đang Ship':'Hoàn Thành' "></td>
+
+
+                        <td>
+                            <a th:href="@{'/admin/orders/edit/' + ${order.orderId}}"
+                            class="btn btn-outline-warning"><i class="fas fa-edit    "></i>Sửa</a>
+                            <a th:href="@{'/admin/orders/delete/' + ${order.orderId}}"
+                                class="btn btn-outline-danger"><i class="fas fa-recycle    "></i>Xóa</a>
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer text-muted">
+
+            <form action="">
+                <div class="form-inline float-left">
+                    <label for="size">Page Size: </label>
+                    <select name="size" id="size" class="form-control" onchange="this.form.submit()">
+                        <option th:selected="${orderPage.size ==5}" value="5">5</option>
+                        <option th:selected="${orderPage.size ==10}" value="10">10</option>
+                        <option th:selected="${orderPage.size ==15}" value="15">15</option>
+                        <option th:selected="${orderPage.size ==20}" value="20">20</option>
+                        <option th:selected="${orderPage.size ==30}" value="30">30</option>
+                    </select>
+                </div>
+            </form>
+            <nav aria-label="Page navigation" th:if="${orderPage.totalPages >0}">
+                <ul class="pagination justify-content-center">
+                    <li th:class="${1==orderPage.number+1 } ? 'page-item active' : 'page-item'">
+                        <a th:href="@{/admin/orders/searchpaginated(orderId=${orderId}, size =${orderPage.size}, page=${1})}"
+                            class="page-link">
+                            First
+                        </a>
+                    </li>
+                    <li class="page-item active" th:each=" pageNumber : ${pageNumbers}"
+                        th:if="${orderPage.totalPages >1}"
+                        th:class="${pageNumber == orderPage.number+1} ? 'page-item active':'page-item'">
+                        <a th:href="@{/admin/orders/searchpaginated(orderId=${orderId}, size =${orderPage.size}, page=${pageNumber})}"
+                            class="page-link" th:text="${pageNumber}">
+
+                        </a>
+                    </li>
+
+
+                    <li
+                        th:class="${orderPage.totalPages == orderPage.number+1 } ? 'page-item active' : 'page-item'">
+                        <a th:href="@{/admin/orders/searchpaginated(orderId=${orderId}, size =${orderPage.size}, page=${orderPage.totalPages})}"
+                            class="page-link">
+                            Last
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+  <!doctype html>
+  <html lang="UTF-8" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{admin/dashboardLayout.html}">
+
+  <head>
+
+    <head>
+      <title>Sản Phẩm</title>
+
+
+    </head>
+
+  <body>
+
+    <section class="row" >
+      <div class="col  mt-4">
+        <div th:if="${message !=null}" class="alert alert-primary" role="alert">
+          <i>[[${message}]]</i>
+        </div>
+        <form th:action="@{/admin/products/saveOrUpdate}" method="post" th:object="${product}"
+          enctype="multipart/form-data">
+          <div class="card">
+            <div class="card-header">
+              <h2>Thêm mới sản phẩm</h2>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-7">
+                  <div class="form-group">
+                    <input type="hidden" th:field="*{isEdit}">
+                    <label for="productId">Mã sản phẩm:</label>
+                    <input type="text" class="form-control" th:field="*{productId}" name="productId" id="productId"
+                      readonly>
+                    <small th:if="${#fields.hasErrors('productId')}" id="namehelpId" class="form-text text-danger">Vui lĂ²ng nháº­p mĂ£ sáº£n pháº©m</small>
+
+                              </div>
+                              <div class="form-group">
+                                <label for="name">Tên sản phẩm:</label>
+                                <input type="text" class="form-control" th:field="*{name}" name="name" id="name" aria-describedby="namehelpId" placeholder="  Name">
+                                <small th:if="${#fields.hasErrors('name')}" id="namehelpId" class="form-text text-danger">Vui lĂ²ng nháº­p tĂªn sáº£n pháº©m</small>
+                              </div>
+                              <div class="form-group">
+                                <label for="quantity">Số lượng</label>
+                                <input type="text" class="form-control" th:field="*{quantity}" id="quantity" aria-describedby="quantityhelpId" placeholder="Quantity">
+                                <small id="quantityhelpId" th:if="${#fields.hasErrors('quantity')}" class="form-text text-danger">Vui lĂ²ng nháº­p sá»‘ lÆ°á»£ng sáº£n pháº©m vĂ  khĂ´ng Ä‘Æ°á»£c Ă¢m</small>
+                              </div>
+                              <div class="input-group form-group">
+                                  <span class="input-group-text">Đơn giá</span>
+                                  <input type="number" th:field="*{unitPrince}" name="unitPrice" id="unitPrice" class="form-control" placeholder="unitPrice" aria-describedby="unitPrice" >
+                                  <span class="input-group-text">$</span>
+                              
+                              </div>
+                              <small id="unitPrice" th:if="${#fields.hasErrors('unitPrince')}" class="form-group form-text text-danger">Ä�Æ¡n giĂ¡ khĂ´ng Ä‘Æ°á»£c Ă‚M</small>
+                              
+                              <div class="form-group" >
+                                <label for="categoryId">Danh mục</label>
+                                <select class="form-control"  name="categoryId" th:field="*{category.categoryId}"  >
+                                
+                                  <option th:each=" category : ${categories}"  
+                                  
+                                  th:value="${category.categoryId}"
+                                  
+                                  >[[${category.name}]]</option>
+                                
+                                </select>
+                              </div>
+                  
+                            </div>
+                            <div class="col-3">
+                              <img id="imgPreview" src="#" th:src="@{${'/upload/' +product.image}}" width="90%" height="80%"  class="custom-file-input" alt="">
+                          <div class="form-group"style="width: 450px;">
+                            <label for="image">Tệp hìn ảnh</label>
+                            <input type="file" class="form-control-file" name="image" accept="image/jpeg, image/png"
+                            id="image" placeholder="Product Image" aria-describedby="image">
+                            <label class="custom-file-label" for="productImage">Choose file</label>
+                            <input type="hidden" name="imgName" th:value="${product.image}">
+                          </div>
+                          <div class="input-group form-group" style="width: 430px;">
+                            <span class="input-group-text">Giảm giá</span>
+                            <input  th:field="*{discount}" type="text" name="discount" id="discount" class="form-control"  aria-describedby="discount" placeholder="Discount">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <small id="discount" th:if="${#fields.hasErrors('discount')}" class="form-group form-text text-danger">MĂ£ giáº£m giĂ¡ khĂ´ng Ä‘Æ°á»£c Ă‚m</small>
+
+                        <div class="form-group"style="width: 430px;">
+                          <label for="">Tình trạng</label>
+                          <select class="form-control" name="status" id="status"  th:field="*{status}">
+                            <option value="1">Hết hàng</option>
+                            <option value="2">Đang giảm giá</option>
+                            <option value="3"> Đặc sắc</option>
+                            <option value="4">Mua nhiều nhất</option>
+
+                          
+
+                          </select>
+                          <!-- <small id="status" th:if="${#fields.hasErrors('status')}" class="form-text text-danger">Vui lĂ²ng nháº­p tĂ¬nh tráº¡ng sáº£n pháº©m</small> -->
+
+                        </div>
+                      
+                            </div>
+                          </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label for="discription">Mô tả</label>
+                              <textarea th:field="*{description}" class="form-control" name="description" id="description" rows="5"  aria-describedby="de"></textarea>
+                              <small id="description" th:if="${#fields.hasErrors('description')}" class="form-text text-danger">Vui lòng nhập mô tả</small>
+
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                          <a th:href="@{/admin/products/add}" class="btn btn-success" ><i class="far fa-plus-square"></i> Mới</a>
+
+                          <button  class="btn btn-primary"><i class="fas fa-save"></i> 
+                            <span th:if="${product.isEdit}">Cập nhật</span>
+                                        <span th:unless="${product.isEdit}">Lưu</span>
+                          </button>
+
+                          <a th:href="@{/admin/products/searchpaginated}" class="btn btn-info float-right"><i class="fas fa-list" ></i> Danh sách sản phẩm</a>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </section>
+        
+      
+            <script>
+              function readURL(input){
+                  if(input.files && input.files[0]){
+                      var reader = new FileReader();
+                      reader.onload = function(e){
+                          $('#imgPreview').attr('src', e.target.result).width(100).height(100);
+                      }
+                      reader.readAsDataURL(input.files[0])
+                  }
+              }
+              $('#image').change(function(){
+                  readURL(this);
+              });
+              $(".custom-file-input").on("change", function() {
+                  var fileName = $(this).val().split("\\").pop();
+                  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+              });
+          </script> 
+    </body>
+    
+
+    </html>

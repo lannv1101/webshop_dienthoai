@@ -1,0 +1,1127 @@
+    <!DOCTYPE html>
+    <html lang="UTF-8" xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" th:href="@{/style/css/style-main.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{http://fonts.googleapis.com/css?family=Open+Sans}"
+            media="all" />
+        <title>Tech Shop</title>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    </head>
+
+    <body class="category-list">
+
+        <div id="box-header">
+            <div class="header-container">
+                <div class="header">
+                    <div class="box-header-01">
+                        <div class="container">
+                            <div class="row">
+                                <div class="logo">
+
+                                </div>
+                                <div class="menu">
+                                    <div class="box-main-menu">
+                                        <div class="main-menu">
+                                            <ul>
+                                                <li class="item1 first"><a th:href="@{/techshop/home}">Logo</a></li>
+                                                <li class="item1 first"><a th:href="@{/techshop/home}">Home</a></li>
+                                                <li class="item2 megamenu-parent"><a th:href="@{grid.html}">Tablets</a>
+                                                    <div class="vt_megamenu_content">
+                                                        <div class="mega-menu-01">
+                                                            <div class="menu-01 menu-01-cate">
+                                                                <div class="title"><span>Categories</span></div>
+                                                                <ul class="content-col">
+                                                                    <li class="first"><a class="mega-lap"
+                                                                            th:href="@{detail.html}"><span>Laptop</span></a>
+                                                                    </li>
+                                                                    <li><a class="mega-tvi"
+                                                                            th:href="@{detail.html}"><span>TV</span></a>
+                                                                    </li>
+                                                                    <li><a class="mega-mob"
+                                                                            th:href="@{detail.html}"><span>Mobile</span></a>
+                                                                    </li>
+                                                                    <li><a class="mega-tab"
+                                                                            th:href="@{detail.html}"><span>Tablet</span></a>
+                                                                    </li>
+                                                                    <li><a class="mega-cam"
+                                                                            th:href="@{detail.html}"><span>Camera</span></a>
+                                                                    </li>
+                                                                    <li class="last"><a class="mega-rad"
+                                                                            th:href="@{detail.html}"><span>Radio</span></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="menu-01 menu-01-top">
+                                                                <div class="title"><span>Tops</span><span
+                                                                        class="hot">Hot</span></div>
+                                                                <ul class="content-col">
+                                                                    <li class="first"><a
+                                                                            href="detail.html"><span>Smartphones</span></a>
+                                                                    </li>
+                                                                    <li><a
+                                                                            href="detail.html"><span>Accessories</span></a>
+                                                                    </li>
+                                                                    <li><a href="detail.html"><span>Headsets</span></a>
+                                                                    </li>
+                                                                    <li><a href="detail.html"><span>Batteries</span></a>
+                                                                    </li>
+                                                                    <li><a href="detail.html"><span>Screen
+                                                                                Protectors</span></a></li>
+                                                                    <li class="last"><a href="detail.html"><span>Memmory
+                                                                                Cards</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div id="feature"
+                                                                class="menu-01 menu-01-feature carousel-feature">
+                                                                <div class="title"><span>Featured</span><span
+                                                                        class="new">New</span></div>
+                                                                <div class="carousel-inner">
+                                                                    <div class="item active">
+                                                                        <div class="image"><img alt=""
+                                                                                th:src="@{/images/feature-mega01.png}" />
+                                                                        </div>
+                                                                        <div class="carousel-caption-feature">
+                                                                            <div class="title-advan"><span
+                                                                                    class="name-advan">Ipad Air and
+                                                                                    iOS7</span>
+                                                                                <div class="text-des-advan"><span>At
+                                                                                        vero eos et accusamus et iusto
+                                                                                        odios un dignissimos ducimus qui
+                                                                                        blan ditiis prasixer esentium
+                                                                                        voluptatum</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item">
+                                                                        <div class="image"><img alt=""
+                                                                                th:src="@{/images/feature-mega01.png}" />
+                                                                        </div>
+                                                                        <div class="carousel-caption-feature">
+                                                                            <div class="title-advan"><span
+                                                                                    class="name-advan">Ipad Air and
+                                                                                    iOS7</span>
+                                                                                <div class="text-des-advan"><span>At
+                                                                                        vero eos et accusamus et iusto
+                                                                                        odios un dignissimos ducimus qui
+                                                                                        blan ditiis prasixer esentium
+                                                                                        voluptatum</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item">
+                                                                        <div class="image"><img alt=""
+                                                                                th:src="@{/images/feature-mega01.png}" />
+                                                                        </div>
+                                                                        <div class="carousel-caption-feature">
+                                                                            <div class="title-advan"><span
+                                                                                    class="name-advan">Ipad Air and
+                                                                                    iOS7</span>
+                                                                                <div class="text-des-advan"><span>At
+                                                                                        vero eos et accusamus et iusto
+                                                                                        odios un dignissimos ducimus qui
+                                                                                        blan ditiis prasixer esentium
+                                                                                        voluptatum</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="menu-01 menu-01-sale">
+                                                                <div class="title"><span>Sale</span></div>
+                                                                <div class="content"><img alt=""
+                                                                        th:src="@{/images/sale-mega-01.png}" />
+                                                                    <p class="description">At vero eos et accusamus et
+                                                                        iusto odios un dignissimos ducimus qui blan
+                                                                        ditiis prasixer esentium voluptatum</p>
+                                                                    <div class="shop-now"><a title="Shop now"
+                                                                            href="detail.html"><span>Shop now</span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="item3 megamenu-parent"><a href="grid.html">smart phone</a>
+                                                    <div class="vt_megamenu_content">
+                                                        <div class="mega-menu-02">
+                                                            <h1 class="title">MOST POPULAR</h1>
+                                                            <div class="block row vt-slider vt-slider67">
+                                                                <div class="slider-inner">
+                                                                    <div class="container-slider">
+                                                                        <div class="products-grid">
+                                                                            <div class="item">
+                                                                                <div class="item-wrap">
+                                                                                    <div class="item-image">
+                                                                                        <a class="product-image no-touch"
+                                                                                            href="detail.html"
+                                                                                            title="Ipad Air and iOS7">
+                                                                                            <img class="first_image"
+                                                                                                th:src="@{/images/product/larg/demo9.jpg}"
+                                                                                                alt="Ipad Air and iOS7" />
+                                                                                        </a>
+                                                                                        <div class="item-btn">
+                                                                                            <div class="box-inner">
+                                                                                                <a title="Add to wishlist"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-wishlist">&nbsp;</a>
+                                                                                                <a title="Add to compare"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-compare">&nbsp;</a>
+                                                                                                <span class="qview">
+                                                                                                    <a class="vt_quickview_handler"
+                                                                                                        data-original-title="Quick View"
+                                                                                                        data-placement="left"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        href="detail.html"><span>Quick
+                                                                                                            View</span></a>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a title="Add to cart"
+                                                                                            class="btn-cart">&nbsp;</a>
+                                                                                    </div>
+                                                                                    <div class="pro-info">
+                                                                                        <div class="pro-inner">
+                                                                                            <div
+                                                                                                class="pro-title product-name">
+                                                                                                <a href="detail.html">Ipad
+                                                                                                    Air and iOS7</a>
+                                                                                            </div>
+                                                                                            <div class="pro-content">
+                                                                                                <div class="wrap-price">
+                                                                                                    <div
+                                                                                                        class="price-box">
+                                                                                                        <span
+                                                                                                            class="regular-price">
+                                                                                                            <span
+                                                                                                                class="price">$800.00</span></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="ratings">
+                                                                                                    <div
+                                                                                                        class="rating-box">
+                                                                                                        <div class="rating"
+                                                                                                            style="width:80%">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                        class="amount"><a
+                                                                                                            href="detail.html">1(s)</a></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <div class="item-wrap">
+                                                                                    <div class="item-image">
+                                                                                        <a class="product-image no-touch"
+                                                                                            href="detail.html"
+                                                                                            title="Ipad Air and iOS7">
+                                                                                            <img class="first_image"
+                                                                                                th:src="@{/images/product/larg/demo1.jpg}"
+                                                                                                alt="Ipad Air and iOS7" />
+                                                                                        </a>
+                                                                                        <div class="item-btn">
+                                                                                            <div class="box-inner">
+                                                                                                <a title="Add to wishlist"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-wishlist">&nbsp;</a>
+                                                                                                <a title="Add to compare"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-compare">&nbsp;</a>
+                                                                                                <span class="qview">
+                                                                                                    <a class="vt_quickview_handler"
+                                                                                                        data-original-title="Quick View"
+                                                                                                        data-placement="left"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        href="detail.html"><span>Quick
+                                                                                                            View</span></a>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a title="Add to cart"
+                                                                                            class="btn-cart">&nbsp;</a>
+                                                                                    </div>
+                                                                                    <div class="pro-info">
+                                                                                        <div class="pro-inner">
+                                                                                            <div
+                                                                                                class="pro-title product-name">
+                                                                                                <a href="detail.html">Ipad
+                                                                                                    Air and iOS7</a>
+                                                                                            </div>
+                                                                                            <div class="pro-content">
+                                                                                                <div class="wrap-price">
+                                                                                                    <div
+                                                                                                        class="price-box">
+                                                                                                        <span
+                                                                                                            class="regular-price">
+                                                                                                            <span
+                                                                                                                class="price">$800.00</span></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="ratings">
+                                                                                                    <div
+                                                                                                        class="rating-box">
+                                                                                                        <div class="rating"
+                                                                                                            style="width:80%">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                        class="amount"><a
+                                                                                                            href="detail.html">1(s)</a></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <div class="item-wrap">
+                                                                                    <div class="item-image">
+                                                                                        <a class="product-image no-touch"
+                                                                                            href="detail.html"
+                                                                                            title="Ipad Air and iOS7">
+                                                                                            <img class="first_image"
+                                                                                                th:src="@{/images/product/larg/demo6.jpg}"
+                                                                                                alt="Ipad Air and iOS7" />
+                                                                                        </a>
+                                                                                        <div class="item-btn">
+                                                                                            <div class="box-inner">
+                                                                                                <a title="Add to wishlist"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-wishlist">&nbsp;</a>
+                                                                                                <a title="Add to compare"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-compare">&nbsp;</a>
+                                                                                                <span class="qview">
+                                                                                                    <a class="vt_quickview_handler"
+                                                                                                        data-original-title="Quick View"
+                                                                                                        data-placement="left"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        href="detail.html"><span>Quick
+                                                                                                            View</span></a>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a title="Add to cart"
+                                                                                            class="btn-cart">&nbsp;</a>
+                                                                                    </div>
+                                                                                    <div class="pro-info">
+                                                                                        <div class="pro-inner">
+                                                                                            <div
+                                                                                                class="pro-title product-name">
+                                                                                                <a href="detail.html">Ipad
+                                                                                                    Air and iOS7</a>
+                                                                                            </div>
+                                                                                            <div class="pro-content">
+                                                                                                <div class="wrap-price">
+                                                                                                    <div
+                                                                                                        class="price-box">
+                                                                                                        <span
+                                                                                                            class="regular-price">
+                                                                                                            <span
+                                                                                                                class="price">$800.00</span></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="ratings">
+                                                                                                    <div
+                                                                                                        class="rating-box">
+                                                                                                        <div class="rating"
+                                                                                                            style="width:80%">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                        class="amount"><a
+                                                                                                            href="detail.html">1(s)</a></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <div class="item-wrap">
+                                                                                    <div class="item-image">
+                                                                                        <a class="product-image no-touch"
+                                                                                            href="detail.html"
+                                                                                            title="Ipad Air and iOS7">
+                                                                                            <img class="first_image"
+                                                                                                th:src="@{/images/product/larg/demo7.jpg}"
+                                                                                                alt="Ipad Air and iOS7" />
+                                                                                        </a>
+                                                                                        <div class="item-btn">
+                                                                                            <div class="box-inner">
+                                                                                                <a title="Add to wishlist"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-wishlist">&nbsp;</a>
+                                                                                                <a title="Add to compare"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-compare">&nbsp;</a>
+                                                                                                <span class="qview">
+                                                                                                    <a class="vt_quickview_handler"
+                                                                                                        data-original-title="Quick View"
+                                                                                                        data-placement="left"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        href="detail.html"><span>Quick
+                                                                                                            View</span></a>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a title="Add to cart"
+                                                                                            class="btn-cart">&nbsp;</a>
+                                                                                    </div>
+                                                                                    <div class="pro-info">
+                                                                                        <div class="pro-inner">
+                                                                                            <div
+                                                                                                class="pro-title product-name">
+                                                                                                <a href="detail.html">Ipad
+                                                                                                    Air and iOS7</a>
+                                                                                            </div>
+                                                                                            <div class="pro-content">
+                                                                                                <div class="wrap-price">
+                                                                                                    <div
+                                                                                                        class="price-box">
+                                                                                                        <span
+                                                                                                            class="regular-price">
+                                                                                                            <span
+                                                                                                                class="price">$800.00</span></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="ratings">
+                                                                                                    <div
+                                                                                                        class="rating-box">
+                                                                                                        <div class="rating"
+                                                                                                            style="width:80%">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                        class="amount"><a
+                                                                                                            href="detail.html">1(s)</a></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <div class="item-wrap">
+                                                                                    <div class="item-image">
+                                                                                        <a class="product-image no-touch"
+                                                                                            href="detail.html"
+                                                                                            title="Ipad Air and iOS7">
+                                                                                            <img class="first_image"
+                                                                                                th:src="@{/images/product/larg/demo8.jpg}"
+                                                                                                alt="Ipad Air and iOS7" />
+                                                                                        </a>
+                                                                                        <div class="item-btn">
+                                                                                            <div class="box-inner">
+                                                                                                <a title="Add to wishlist"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-wishlist">&nbsp;</a>
+                                                                                                <a title="Add to compare"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-compare">&nbsp;</a>
+                                                                                                <span class="qview">
+                                                                                                    <a class="vt_quickview_handler"
+                                                                                                        data-original-title="Quick View"
+                                                                                                        data-placement="left"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        href="detail.html"><span>Quick
+                                                                                                            View</span></a>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a title="Add to cart"
+                                                                                            class="btn-cart">&nbsp;</a>
+                                                                                    </div>
+                                                                                    <div class="pro-info">
+                                                                                        <div class="pro-inner">
+                                                                                            <div
+                                                                                                class="pro-title product-name">
+                                                                                                <a href="detail.html">Ipad
+                                                                                                    Air and iOS7</a>
+                                                                                            </div>
+                                                                                            <div class="pro-content">
+                                                                                                <div class="wrap-price">
+                                                                                                    <div
+                                                                                                        class="price-box">
+                                                                                                        <span
+                                                                                                            class="regular-price">
+                                                                                                            <span
+                                                                                                                class="price">$800.00</span></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="ratings">
+                                                                                                    <div
+                                                                                                        class="rating-box">
+                                                                                                        <div class="rating"
+                                                                                                            style="width:80%">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                        class="amount"><a
+                                                                                                            href="detail.html">1(s)</a></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <div class="item-wrap">
+                                                                                    <div class="item-image">
+                                                                                        <a class="product-image no-touch"
+                                                                                            href="detail.html"
+                                                                                            title="Ipad Air and iOS7">
+                                                                                            <img class="first_image"
+                                                                                                th:src="@{/images/product/larg/demo9.jpg}"
+                                                                                                alt="Ipad Air and iOS7" />
+                                                                                        </a>
+                                                                                        <div class="item-btn">
+                                                                                            <div class="box-inner">
+                                                                                                <a title="Add to wishlist"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-wishlist">&nbsp;</a>
+                                                                                                <a title="Add to compare"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-compare">&nbsp;</a>
+                                                                                                <span class="qview">
+                                                                                                    <a class="vt_quickview_handler"
+                                                                                                        data-original-title="Quick View"
+                                                                                                        data-placement="left"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        href="detail.html"><span>Quick
+                                                                                                            View</span></a>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a title="Add to cart"
+                                                                                            class="btn-cart">&nbsp;</a>
+                                                                                    </div>
+                                                                                    <div class="pro-info">
+                                                                                        <div class="pro-inner">
+                                                                                            <div
+                                                                                                class="pro-title product-name">
+                                                                                                <a href="detail.html">Ipad
+                                                                                                    Air and iOS7</a>
+                                                                                            </div>
+                                                                                            <div class="pro-content">
+                                                                                                <div class="wrap-price">
+                                                                                                    <div
+                                                                                                        class="price-box">
+                                                                                                        <span
+                                                                                                            class="regular-price">
+                                                                                                            <span
+                                                                                                                class="price">$800.00</span></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="ratings">
+                                                                                                    <div
+                                                                                                        class="rating-box">
+                                                                                                        <div class="rating"
+                                                                                                            style="width:80%">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                        class="amount"><a
+                                                                                                            href="detail.html">1(s)</a></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="item">
+                                                                                <div class="item-wrap">
+                                                                                    <div class="item-image">
+                                                                                        <a class="product-image no-touch"
+                                                                                            href="detail.html"
+                                                                                            title="Ipad Air and iOS7">
+                                                                                            <img class="first_image"
+                                                                                                th:src="@{/images/product/larg/demo10.jpg}"
+                                                                                                alt="Ipad Air and iOS7" />
+                                                                                        </a>
+                                                                                        <div class="item-btn">
+                                                                                            <div class="box-inner">
+                                                                                                <a title="Add to wishlist"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-wishlist">&nbsp;</a>
+                                                                                                <a title="Add to compare"
+                                                                                                    href="detail.html"
+                                                                                                    class="link-compare">&nbsp;</a>
+                                                                                                <span class="qview">
+                                                                                                    <a class="vt_quickview_handler"
+                                                                                                        data-original-title="Quick View"
+                                                                                                        data-placement="left"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        href="detail.html"><span>Quick
+                                                                                                            View</span></a>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <a title="Add to cart"
+                                                                                            class="btn-cart">&nbsp;</a>
+                                                                                    </div>
+                                                                                    <div class="pro-info">
+                                                                                        <div class="pro-inner">
+                                                                                            <div
+                                                                                                class="pro-title product-name">
+                                                                                                <a href="detail.html">Ipad
+                                                                                                    Air and iOS7</a>
+                                                                                            </div>
+                                                                                            <div class="pro-content">
+                                                                                                <div class="wrap-price">
+                                                                                                    <div
+                                                                                                        class="price-box">
+                                                                                                        <span
+                                                                                                            class="regular-price">
+                                                                                                            <span
+                                                                                                                class="price">$800.00</span></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="ratings">
+                                                                                                    <div
+                                                                                                        class="rating-box">
+                                                                                                        <div class="rating"
+                                                                                                            style="width:80%">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                        class="amount"><a
+                                                                                                            href="detail.html">1(s)</a></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!--end item wrap -->
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </li>
+                                                <li class="item4"><a href="grid.html">laptops </a></li>
+                                                <li class="item5"><a href="grid.html">Desktops</a></li>
+                                                <li class="item6"><a href="detail.html">Computer Accessories</a></li>
+                                                <li class="item7 last"><a th:href="@{cart}">Cart</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    </div>
+                                </div>
+                                <div class="account-and-cart">
+                                    <div class="my-account">
+                                        <div class="content">
+                                            <ul class="left">
+                                                <li><a class="top-link-myaccount" href="detail.html">My Account</a></li>
+                                                <li><a class="top-link-wishlist" href="detail.html">My Wishlist</a></li>
+                                                <li><a class="top-link-checkout" href="detail.html">Checkout</a></li>
+                                                <li><a class="top-link-login" href="detail.html">Log In</a></li>
+                                            </ul>
+                                            <ul class="right">
+                                                <li class="language"><a href="detail.html" class="selected"><img
+                                                            th:src="@{/images/flags/flag-french.jpg}"
+                                                            alt="" />French</a>
+                                                    <ul>
+                                                        <li><a href="home-01.html"><img
+                                                                    th:src="@{/images/flags/flag-default.jpg}"
+                                                                    alt="" />English</a></li>
+                                                        <li><a href="home-02.html"><img
+                                                                    th:src="@{/images/flags/flag-french.jpg}"
+                                                                    alt="" />French</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box-cart">
+                                        <div class="cart-mini">
+                                            <div class="title">
+                                                <span th:text="${NoOfItem}" class="item"></span>
+                                            </div>
+                                            <div class="block-content">
+                                                <div class="inner">
+                                                    <p class="block-subtitle">Recently added item(s)</p>
+                                                    <ol id="cart-sidebar" class="mini-products-list">
+                                                        <li class="item" th:each=" item, iStat : ${cartItems}">
+                                                            <a href="detail.html" class="product-image">
+                                                                <img class="img-fulid" style="width:50%;"
+                                                                    th:src="@{${'/upload/' + item.image}}" />
+                                                                <p class="product-name"><a th:text="${item.name}"></a>
+                                                                </p>
+                                                            </a>
+                                                            <a href="detail.html" class="btn-remove">Remove This
+                                                                Item</a>
+                                                            <a href="detail.html" title="Edit item"
+                                                                class="btn-edit">Edit item</a>
+                                                            <div class="product-details">
+
+                                                                <span class="price">$ [[${item.unitPrince}]]</span>
+                                                                <div class="qty-abc">
+                                                                    <a title="Decrement" class="qty-change-left"
+                                                                        href="detail.html">down</a>
+                                                                    <input class="input-text qty" type="text"
+                                                                        value="1" />
+                                                                    <a title="Increment" class="qty-change-right"
+                                                                        href="detail.html">up</a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ol>
+                                                    <div class="summary">
+                                                        <p class="subtotal">
+                                                            <span class="label">Subtotal:</span> <span class="price"
+                                                                th:text="${total}">$</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="actions">
+                                                        <div class="a-inner">
+                                                            <a class="btn-mycart" th:href="@{/techshop/cart}"
+                                                                title="View my cart">view my cart</a>
+                                                            <a href="" title="Checkout"
+                                                                class="btn-checkout">Checkout</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bgr-menu">
+                        </div>
+                    </div>
+                    <div class="box-header-02">
+                        <div class="container">
+                            <div class="row">
+                                <ul>
+                                    <li><a href="detail.html">Overview </a></li>
+                                    <li><a href="detail.html">Devices </a></li>
+                                    <li><a href="detail.html">Postpaid Plans</a></li>
+                                    <li><a href="detail.html">Prepaid Plans</a></li>
+                                    <li><a href="detail.html">Broadband Plans </a></li>
+                                    <li><a href="detail.html">Add-Ons </a></li>
+                                    <li><a href="detail.html">FAQs </a></li>
+                                    <li><a href="detail.html">Blog </a></li>
+                                    <li><a href="detail.html">About Us</a></li>
+                                    <li><a href="detail.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-header-03">
+                        <div class="container">
+                            <div class="row">
+                                <span class="shipping"><a href="detail.html">Free Shipping-Free Returns</a></span>
+                                <span class="gift"><a href="detail.html">Signature Gift Wrapping</a></span>
+                                <span class="customer"><a href="detail.html">24/7 Customer Care</a></span>
+                                <div class="box-search">
+                                    <form action="?q=exp" method="POST">
+                                        <button><span>search</span></button>
+                                        <ul class="drop-search">
+                                            <li>
+                                                <span class="selected">All Categories </span>
+                                                <ul>
+                                                    <li>All Categories </li>
+                                                    <li>Cate 1</li>
+                                                    <li>Cate 2</li>
+                                                    <li>Cate 3</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <input name="" type="text" value="" placeholder="search this site..." />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content container">
+            <!--Section: Block Content -->
+            <section class="mt-5 mb-4">
+
+                <!--Grid row-->
+                <div class="row">
+                    <form method="post" th:action="@{/techshop/cart/checkout}" th:object="${customer}">
+                    <!--Grid column-->
+                    <div class="col-lg-8 mb-4">
+                       
+
+                            <!-- Card -->
+                            <div class="card wish-list pb-1">
+                                <div class="card-body">
+
+                                    <h5 class="mb-2">Billing details</h5>
+
+                                    <!-- Grid row -->
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-lg-6">
+
+                                            <!-- First name -->
+                                            <div class="md-form md-outline mb-0 mb-lg-4">
+                                                <label for="firstName">Tên người nhận</label>
+                                                <input type="text" id="firstName" required
+                                                    class="form-control mb-0 mb-lg-2" th:field="*{name}">
+                                            </div>
+
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <!-- Grid column -->
+                                        <div class="col-lg-6">
+
+                                            <div class="md-form md-outline mt-2">
+                                                <label for="form19">Email</label>
+                                                <input type="email" required id="form19" class="form-control" th:field="*{email}">
+                                            </div>
+
+                                        </div>
+                                        <!-- Grid column -->
+
+                                    </div>
+                                    <!-- Grid row -->
+
+
+
+                                    <!-- Country -->
+
+
+                                    <!-- Phone -->
+                                    <div class="md-form md-outline mt-2">
+                                        <label for="form18">Số điện thoại</label>
+                                        <input type="number" minlength="10" maxlength="10" required id="form18" th:field="*{phone}"
+                                            class="form-control">
+                                    </div>
+
+                                    <!-- Address Part 2 -->
+                                    <div class="md-form md-outline mt-2">
+                                        <label for="form15">Địa chỉ</label>
+                                        <input type="text" id="form15" class="form-control" th:field="*{address}">
+                                    </div>
+
+                                    <!-- Postcode / ZIP -->
+                                    <!-- <div class="md-form md-outline mt-3">
+                                        <label for="form16">Ngày mua hàng</label>
+                                        <input type="text" maxlength="6" minlength="6" required id="form16"
+                                            class="form-control">
+                                    </div> -->
+
+
+
+
+
+                                    <!-- Email address -->
+
+
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4">
+
+                        <!-- Card -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+
+                                <h5 class="mb-3">Tổng Thanh Toán </h5>
+
+                                <ul class="list-group list-group-flush">
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                        Tiền phải thanh toán
+                                        <span><span th:text="${total}"></span>VND</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                        Shipping
+                                        <span>0</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                        <div>
+                                            <strong>Tổng cộng</strong>
+                                            <strong>
+                                                <p class="mb-0">(including VAT)</p>
+                                            </strong>
+                                        </div>
+                                        <span><strong><span th:text="${total}"></span></strong>VND</span>
+                                    </li>
+                                </ul>
+
+
+                                <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">Pay
+                                    Now</button>
+
+
+                            </div>
+                        </div>
+                     
+
+                    </div>
+                    <!--Grid column-->
+                    </form>
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Block Content-->
+
+        </div>
+
+        <div id="box-footer">
+            <div class="box-footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="row">
+                            <div class="block-title"><span>Connect with</span></div>
+                            <div class="box-connect col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <a href="detail.html" class="tweeter">tweeter</a>
+                                <a href="detail.html" class="face-book">face book</a>
+                                <a href="detail.html" class="no-name">no-name</a>
+                                <a href="detail.html" class="pinseter">pinseter</a>
+                                <a href="detail.html" class="google">google+</a>
+                                <a href="detail.html" class="init">init</a>
+                            </div>
+                            <div class="box-tweeter col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="block-title"><span>tweeter</span></div>
+                                <div class="content">
+                                    Leo aliquet, dictum orci at, varius ligula. Duis aliquet pellentesque tincidunt.
+                                    Vestibulum finibus ceo aliquet, dictum orci at, varius ligula. Duis aliquet
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="row">
+                            <div class="block block-info col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="block-title"><span>Information</span></div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a href="detail.html">Site Map</a></li>
+                                        <li><a href="detail.html">Search Terms</a></li>
+                                        <li><a href="detail.html">Advanced Search</a></li>
+                                        <li><a href="detail.html">Our stores</a></li>
+                                        <li><a href="detail.html">About Us</a></li>
+                                        <li><a href="detail.html">Blog</a></li>
+                                        <li><a href="detail.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block block-customer col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="block-title"><span>Customer Service</span></div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a href="detail.html">View Cart</a></li>
+                                        <li><a href="detail.html">My Account</a></li>
+                                        <li><a href="detail.html">Order Status</a></li>
+                                        <li><a href="detail.html">Shop By Brand</a></li>
+                                        <li><a href="detail.html">Trade-in Program</a></li>
+                                        <li><a href="detail.html">Testimonial</a></li>
+                                        <li><a href="detail.html">FAQs</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block block-galary col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="block-title"><span>Gallery</span></div>
+                                <div id="links" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#links" data-slide-to="0" class="active"></li>
+                                        <li data-target="#links" data-slide-to="1"></li>
+                                        <li data-target="#links" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <a th:src="@{/images/product/larg/demo1.jpg}" title="Glary image 01"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo1.jpg}" />
+                                            </a>
+                                            <a th:src="@{/images/product/larg/demo2.jpg}" title="Glary image 02"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo2.jpg}">
+                                            </a>
+                                            <a th:src="@{/images/product/larg/demo3.jpg}" title="Glary image 03"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo3.jpg}">
+                                            </a>
+                                            <a th:src="@{/images/product/larg/demo4.jpg}" title="Glary image 04"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo4.jpg}" />
+                                            </a>
+                                            <a th:src="@{/images/product/larg/demo5.jpg}" title="Glary image 05"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo5.jpg}" />
+                                            </a>
+                                            <a th:src="@{/images/product/larg/demo6.jpg}" title="Glary image 06"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo6.jpg}" />
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a th:href="@{/images/product/larg/demo7.jpg}" title="Glary image 07"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo7.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo8.jpg}" title="Glary image 08"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo8.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo9.jpg}" title="Glary image 09"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo9.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo10.jpg}" title="Glary image 10"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo10.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo11.jpg}" title="Glary image 11"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo11.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo12.jpg}" title="Glary image 12"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo12.jpg}" />
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo13.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo13.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo13.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo13.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo13.jpg}" />
+                                            </a>
+                                            <a th:href="@{/images/product/larg/demo13.jpg}" title="Glary image 13"
+                                                data-gallery>
+                                                <img th:src="@{/images/product/larg/demo13.jpg}" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a href="detail.html" class="view-all">View all</a></li>
+                                    </ul>
+                                </div>
+
+                                <div id="blueimp-gallery" class="blueimp-gallery">
+
+                                    <div class="slides"></div>
+
+                                    <h3 class="title"></h3>
+                                    <a class="prev">‹</a>
+                                    <a class="next">›</a>
+                                    <a class="close">×</a>
+                                    <a class="play-pause"></a>
+                                    <ol class="indicator"></ol>
+
+                                    <div class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close"
+                                                        aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title"></h4>
+                                                </div>
+                                                <div class="modal-body next"></div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default pull-left prev">
+                                                        <i class="glyphicon glyphicon-chevron-left"></i>
+                                                        Previous
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary next">
+                                                        Next
+                                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="block block-cu col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="block-title"><span>Contact us</span></div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li class="item1"><span>Our business address is 1063 <br />Freelon Street San
+                                                Francisco</span></li>
+                                        <li class="item2"><span>+ 020.566.6666</span></li>
+                                        <li class="item3"><a href="mailto:support@7-Up.com">support@7-Up.com</a></li>
+                                    </ul>
+                                    <div class="phone-nb"><a href="tel:0906868757">090.68.68.757</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a id="gototop">Top</a>
+            <script type="text/javascript" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+            <script type="text/javascript" th:src="@{/style/bootstrap/js/bootstrap.min.js}"></script>
+            <script th:src="@{/js/galary-image/js/jquery.blueimp-gallery.min.js}"></script>
+            <script th:src="@{/js/galary-image/js/bootstrap-image-gallery.js}"></script>
+            <script type="text/javascript" th:src="@{/js/owl-carousel/owl.carousel.js}"></script>
+            <script type="text/javascript" th:src="@{/js/slideshow/jquery.themepunch.revolution.js}"></script>
+            <script type="text/javascript" th:src="@{/js/slideshow/jquery.themepunch.plugins.min.js}"></script>
+            <script type="text/javascript" th:src="@{/js/price.js}"></script>
+            <script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+            <script type="text/javascript" th:src="@{/js/theme.js}"></script>
+    </body>
+
+
+
+
+
+    </html>

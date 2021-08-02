@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="UTF-8"  xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{admin/Layout.html}"
+    >
+
+    <head>
+        <title>Quản Lý Tài Khoản</title>
+      
+    </head>
+
+    <body>
+        <div class="container" layout:fragment="content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="text-center">Quản Lý Tài Khoản</h2>
+                </div>
+                <div th:if="${message !=null}" class="alert alert-primary text-center" role="alert">
+                    <i>[[${message}]]</i>
+                </div>
+                <div class="panel-body">
+                    <form th:action="@{/admin/accounts/saveOrUpdate}" method="POST" th:object="${account}">
+                        <div class="form-group mt-3">
+                            <label for="username">Tên đăng nhập:</label>
+                            <input  type="text" class="form-control" id="username" th:field="*{username}">
+                            <small id="username" th:if="${#fields.hasErrors('username')}" class="form-text text-danger">Vui lòng nhập tên đăng nhập và độ dài lớn hơn 5</small>
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="name">Mật khẩu:</label>
+                            <input type="password" class="form-control" id="password" th:field="*{password}">
+                            <small id="password" th:if="${#fields.hasErrors('password')}" class="form-text text-danger">Vui lòng nhập mật khẩu và độ dài lớn hơn 5</small>
+
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="">Tình trạng</label>
+                            <select required class="form-control" name="status" id="status"  th:field="*{role}">
+                              <option th:each="item : ${getRole.entrySet()}" 
+                              th:value="${item.key}" th:text="${item.value}"
+                              ></option>
+                              
+                            
+    
+                            
+    
+                            </select>
+
+    
+                          </div>
+                        <button class="btn btn-success mt-3"><i class="fas fa-save"></i>
+                            <span th:if="${account.isEdit}">Cập nhật</span>
+                            <span th:unless="${account.isEdit}">Lưu</span>
+                        </button>
+                        <a th:href="@{/admin/accounts/searchpaginated}" class="btn btn-info float-right mt-3"><i class="fas fa-list" ></i> Danh sách tài khoản</a>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+
+     
+    </body>
+
+    </html>
